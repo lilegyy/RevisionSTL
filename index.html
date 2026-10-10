@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport-fit=cover est indispensable pour l'iPhone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Révisions STL-SPCL - Objectif 17.5</title>
+
+    <!-- PWA Setup Apple (Pour le plein écran) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Révisions STL">
+    <link rel="apple-touch-icon" href="https://via.placeholder.com/192/4F46E5/FFFFFF?text=STL">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- KaTeX pour les maths -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+
+<body class="light-mode">
+    <header>
+        <div class="header-top">
+            <h1>STL-SPCL - Objectif 17.5 🚀</h1>
+            <button id="theme-toggle" class="btn-icon">🌙</button>
+        </div>
+        <nav class="tabs">
+            <button class="tab-btn active" data-target="cdd">CDD</button>
+            <button class="tab-btn" data-target="ondes">Ondes</button>
+            <button class="tab-btn" data-target="sp">Systèmes & Procédés</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Vue par défaut : Liste des chapitres -->
+        <section id="chapter-list-view" class="view active">
+            <!-- CDD -->
+            <div id="cdd" class="tab-content active">
+                <div class="chapter-grid" id="grid-cdd"></div>
+            </div>
+            <!-- Ondes -->
+            <div id="ondes" class="tab-content">
+                <div class="chapter-grid" id="grid-ondes"></div>
+            </div>
+            <!-- SP -->
+            <div id="sp" class="tab-content">
+                <div class="chapter-grid" id="grid-sp"></div>
+            </div>
+        </section>
+
+        <!-- Vue Chapitre : Cours ou Exercices -->
+        <section id="chapter-detail-view" class="view">
+            <div class="detail-header">
+                <button id="btn-back" class="btn-outline">← Retour</button>
+                <h2 id="chapter-title">Titre du chapitre</h2>
+            </div>
+            <div class="mode-switch">
+                <button id="btn-cours" class="active">📚 Cours</button>
+                <button id="btn-exos">💪 Exercices</button>
+            </div>
+
+            <div id="content-area" class="content-container">
+                <!-- Le contenu du cours ou des exercices s'affichera ici -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

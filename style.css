@@ -1,0 +1,261 @@
+:root {
+    /* Variables Mode Clair */
+    --bg-color: #f3f4f6;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --primary: #4f46e5;
+    --secondary: #e0e7ff;
+    --border: #d1d5db;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+body.dark-mode {
+    /* Variables Mode Sombre */
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-bg: #1f2937;
+    --primary: #6366f1;
+    --secondary: #374151;
+    --border: #4b5563;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding-bottom: 2rem;
+    /* Adaptation PC : empêche l'app de s'étirer sur tout l'écran PC */
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    min-height: 100vh;
+}
+
+
+/* Header & Tabs */
+
+header {
+    background: var(--card-bg);
+    /* safe-area-inset-top protège le header de l'encoche de l'iPhone en plein écran */
+    padding: max(1rem, env(safe-area-inset-top)) 1rem 1rem 1rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* Vues */
+
+.view {
+    display: none;
+    padding: 1rem;
+}
+
+.view.active {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* Grille de chapitres */
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.chapter-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chapter-card:active {
+    transform: scale(0.98);
+}
+
+.chapter-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.chapter-card p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* Vue Detail */
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.mode-switch {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: var(--card-bg);
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.mode-switch button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.mode-switch button.active {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* Contenu Cours & Exos */
+
+.content-container {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    line-height: 1.6;
+}
+
+.content-container h3 {
+    color: var(--primary);
+    margin: 1.5rem 0 0.5rem 0;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.3rem;
+}
+
+.content-container p,
+.content-container ul {
+    margin-bottom: 1rem;
+}
+
+.content-container ul {
+    padding-left: 1.5rem;
+}
+
+
+/* Exercices interactifs */
+
+.exo-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.exo-question {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.btn-corrige {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.correction {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--secondary);
+    border-radius: 6px;
+    border-left: 4px solid var(--success);
+}
+
+.correction.show {
+    display: block;
+}
