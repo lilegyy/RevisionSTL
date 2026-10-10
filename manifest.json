@@ -1,21 +1,25 @@
 {
-  "name": "Révisions STL",
-  "short_name": "STL App",
-  "description": "Objectif 17.5 au Bac STL-SPCL",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f3f4f6",
-  "theme_color": "#4f46e5",
-  "icons": [
-    {
-      "src": "https://via.placeholder.com/192/4F46E5/FFFFFF?text=STL",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://via.placeholder.com/512/4F46E5/FFFFFF?text=STL",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+    "name": "Révisions STL",
+    "short_name": "STL App",
+    "description": "Objectif 17.5 au Bac STL-SPCL",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f3f4f6",
+    "theme_color": "#4f46e5",
+    "icons": [{
+            "src": "https://via.placeholder.com/192/4F46E5/FFFFFF?text=STL",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://via.placeholder.com/512/4F46E5/FFFFFF?text=STL",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
 }
